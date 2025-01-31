@@ -1,14 +1,19 @@
 import mdx from "@next/mdx";
 
+/** @type {import('next').NextConfig} */
+
 const withMDX = mdx({
   extension: /\.mdx?$/,
   options: {},
 });
 
-/** @type {import('next').NextConfig} */
-
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
 };
 
-export default withMDX(nextConfig);
+try {
+  export default withMDX(nextConfig);
+} catch (err) {
+  console.error("Error exporting configuration: ", err);
+  throw new Error("Configuration export failed.");
+}
