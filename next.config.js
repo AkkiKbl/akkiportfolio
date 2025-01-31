@@ -1,13 +1,11 @@
-/**
- * @type {import('next').NextConfig}
- */
+// next.config.js or next.config.mjs
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-
-  distDir: "dist",
+  // ... other configurations
+  output: "export", // This is the CRUCIAL line
   images: {
     unoptimized: true,
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
